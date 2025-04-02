@@ -136,8 +136,8 @@
         document.getElementById('asyncFetchButton').addEventListener('click', async function () {
                 try {
                     const res = await axios.get('https://s5.360game.360.cn/to5/mini/v21/category.html');
-                    console.1og(res, '89898989')
-                    if (res.status == 200) {
+                    console.log(res, '89898989')
+                    if (res.status === 200) {
                         const users = res.data.data;
                         const asyncGetResultDiv = document.getElementById('asyncGetResult');
                         asyncGetResultDiv.innerHTML = '<h2>Users Found:</h2>' + users.map(user =>
@@ -155,8 +155,8 @@
                     const body = document.getElementById('asyncBodyInput').value || '默认内容';
                     const postData = {
                         title: title,
-                        body:body,
-                        userId:1
+                        body: body,
+                        userId: 1
                     };
                     const res = await axios.post('https://jsonplaceholder.typicode.com/posts',postData);
                     const asyncPostResultDiv = document.getElementById('asyncPostResult');
